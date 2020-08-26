@@ -14,7 +14,7 @@ namespace ClassRoom
         }
 
         public string ClassName { get; set; }
-        public List<Student> ClassList { get; set; }
+        public List<Student> ClassList { get; set; } = new List<Student>();
         public DateTime SemesterStart { get; set; }
     }
 }

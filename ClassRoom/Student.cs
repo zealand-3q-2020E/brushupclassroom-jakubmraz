@@ -9,12 +9,12 @@ namespace ClassRoom
 {
     class Student
     {
-        public Student(string name, int birthmonth, int birthday)
+        public Student(string name, int birthMonth, int birthday)
         {
             Name = name;
-            if(!CheckMonth(birthmonth))
+            if(!CheckMonth(birthMonth))
                 throw new Exception();
-            BirthMonth = birthmonth;
+            BirthMonth = birthMonth;
             Birthday = birthday;
         }
 
@@ -40,6 +40,11 @@ namespace ClassRoom
             if (month < 1 || month > 12)
                 return false;
             return true;
+        }
+
+        public override string ToString()
+        {
+            return $"Student name: {this.Name}; student's birthday: {this.Birthday}. {this.BirthMonth}.";
         }
     }
 }

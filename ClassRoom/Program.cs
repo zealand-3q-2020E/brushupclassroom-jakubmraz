@@ -14,7 +14,7 @@ namespace ClassRoom
             Classroom classroom1 = new Classroom();
             classroom1.ClassName = "3Q";
             classroom1.SemesterStart = new DateTime(2019, 08, 26);
-            classroom1.ClassList = new List<Student>();
+            //classroom1.ClassList = new List<Student>();
 
             Student jakub = new Student("Jakub", 1, 12);
             Student katerina = new Student("Kateřina", 5, 25);
@@ -27,7 +27,8 @@ namespace ClassRoom
             Console.WriteLine($"Classroom name: {classroom1.ClassName}; Start date: {classroom1.SemesterStart.ToString()}\n");
             foreach (var student in classroom1.ClassList)
             {
-                Console.WriteLine($"Student name: {student.Name}; Student's birthday: {student.Birthday}.{student.BirthMonth}.");
+                //Console.WriteLine($"Student name: {student.Name}; Student's birthday: {student.Birthday}.{student.BirthMonth}.");
+                Console.WriteLine(student.ToString());
             }
 
             CountBirthdaysInSeasons(classroom1.ClassList);
