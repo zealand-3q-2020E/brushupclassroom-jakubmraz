@@ -18,5 +18,18 @@ namespace ClassRoom
         public string Name { get; }
         public int BirthMonth { get; }
         public int Birthday { get; }
+
+        public string Season()
+        {
+            if (BirthMonth == 12 || BirthMonth == 1 || BirthMonth == 2)
+                return "Winter";
+            if (BirthMonth >= 3 && BirthMonth <= 5)
+                return "Spring";
+            if (BirthMonth >= 6 && BirthMonth <= 8)
+                return "Summer";
+            if (BirthMonth >= 9 && BirthMonth <= 11)
+                return "Autumn";
+            return "You entered something stupid";
+        }
     }
 }
