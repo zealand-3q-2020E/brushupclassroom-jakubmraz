@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +30,33 @@ namespace ClassRoom
                 Console.WriteLine($"Student name: {student.Name}; Student's birthday: {student.Birthday}.{student.BirthMonth}.");
             }
 
+            CountBirthdaysInSeasons(classroom1.ClassList);
+
             Console.ReadKey();
+        }
+
+        static void CountBirthdaysInSeasons(List<Student> students)
+        {
+            List<Student> springStudents = new List<Student>();
+            List<Student> summerStudents = new List<Student>();
+            List<Student> autumnStudents = new List<Student>();
+            List<Student> winterStudents = new List<Student>();
+            foreach (var student in students)
+            {
+                if(student.Season() == "Spring")
+                    springStudents.Add(student);
+                if(student.Season() == "Summer")
+                    summerStudents.Add(student);
+                if(student.Season() == "Autumn")
+                    autumnStudents.Add(student);
+                if(student.Season() == "Winter")
+                    winterStudents.Add(student);
+            }
+
+            Console.WriteLine($"Students born in Spring: {springStudents.Count}");
+            Console.WriteLine($"Students born in Summer: {summerStudents.Count}");
+            Console.WriteLine($"Students born in Autumn: {autumnStudents.Count}");
+            Console.WriteLine($"Students born in Winter: {winterStudents.Count}");
         }
     }
 }
