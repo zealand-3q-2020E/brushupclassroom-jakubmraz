@@ -13,8 +13,8 @@ namespace ClassRoom
 
         }
 
-        public string ClassName { get; }
-        public List<Student> ClassList { get; }
-        public DateTime SemesterStart { get; }
+        public string ClassName { get; set; }
+        public List<Student> ClassList { get; set; }
+        public DateTime SemesterStart { get; set; }
     }
 }
